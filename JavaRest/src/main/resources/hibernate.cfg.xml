@@ -1,0 +1,25 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Veritabanı bağlantı ayarları -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgredb</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+
+        <!-- Dialekt -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Otomatik schema güncellemesi -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Mapping files or annotated classes -->
+        <!-- Add your entity classes or mapping files here  for ex: entity used below -->
+        <mapping class="org.example.Data.Models.User.UserModel"/>
+        <mapping class="org.example.Data.Models.Company.CompanyModel"/>
+    </session-factory>
+</hibernate-configuration>
